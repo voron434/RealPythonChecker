@@ -1,0 +1,27 @@
+{
+    "name": "Real Pyhton Checker",
+    "version": "1.0",
+    "description": "Check if article is under paywall",
+    "manifest_version": 2,
+
+    "permissions": [
+        "activeTab",
+        "clipboardWrite",
+        "clipboardRead",
+        "tabs"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "run_at": "document_idle",
+            "all_frames": true,
+            "js": [
+                "RealPythonChecker.js"
+            ]
+        }
+    ]
+}
